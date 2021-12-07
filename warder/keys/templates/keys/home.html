@@ -13,16 +13,18 @@
   <body style="background-color:#0f0f23;"></body>>
 
     <div class="container text-center">
-        <pre id="art" style="color:#009900;">
-            _____                                             
-        ___|__  _|__  ____    _____   _____   ______  _____   
-    |  \/  \|  | ||    \  |     | |     \ |   ___||     |  
-    |     /\   | ||     \ |     \ |      \|   ___||     \  
-    |____/  \__|_||__|\__\|__|\__\|______/|______||__|\__\ 
-        |_____|                                            
-                                                            
-    </pre>
+        <div class="container text-center">
+        <pre id="art" style="color:#009900;font-size: 1.4vw;">
 
+         ██╗    ██╗ █████╗ ██████╗ ██████╗ ███████╗██████╗ 
+         ██║    ██║██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔══██╗
+         ██║ █╗ ██║███████║██████╔╝██║  ██║█████╗  ██████╔╝
+         ██║███╗██║██╔══██║██╔══██╗██║  ██║██╔══╝  ██╔══██╗
+         ╚███╔███╔╝██║  ██║██║  ██║██████╔╝███████╗██║  ██║
+          ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+                                          
+    </pre>
+    </div>
         <h1 style="color:#ffff66">Credentials</h1>
 
         {% for cred in creds %}
@@ -32,7 +34,10 @@
               <h6 class="card-subtitle mb-2 text-muted">{{ cred.website }}</h6>
               <p class="card-text"><strong>User:</strong> {{ cred.user }}</p>
               <p class="card-text"><strong>Password:</strong> {{ cred.password }}</p>
-              <p class="card-text">{{ cred.additional_text }}</p>
+              {% if cred.additional_text %}
+                  <strong>Additional text:</strong> 
+                  <p class="card-text">{{ cred.additional_text }}</p>
+              {% endif %}
             </div>
           </div>
           <br>
